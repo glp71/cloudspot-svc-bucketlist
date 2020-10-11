@@ -1,0 +1,27 @@
+{
+  "name": "bucket-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glp71/bucket-app.git"
+  },
+  "author": "Gian Lucas Poltera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glp71/bucket-app/issues"
+  },
+  "homepage": "https://github.com/glp71/bucket-app#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  }
+}
