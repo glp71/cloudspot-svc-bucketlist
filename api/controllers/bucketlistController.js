@@ -24,7 +24,7 @@ exports.list_all_heroes = function(req, res) {
     if (err)
       res.send(err);
     // res.json(heroes);
-    res.json([{id:0, name: "Test1"}, {id: 1, name: "test2"}]);
+    res.json([{id:0, name: "Test1"}, {id: 1, name: "test2"}, {id: 2, name: "Jenkins"}]);
   });
 };
 
