@@ -1,7 +1,8 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-  Task = mongoose.model('Tasks');
+// var mongoose = require('mongoose'),
+//  Task = mongoose.model('Tasks');
+var Task = require('../models/todoListModel'); //created model loading here
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {

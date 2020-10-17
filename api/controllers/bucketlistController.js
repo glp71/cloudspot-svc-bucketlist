@@ -1,7 +1,6 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-Hero = mongoose.model('Heroes');
+var Hero = require('../models/bucketlistModel'); 
 
 var nextId = 0;
 
@@ -20,11 +19,11 @@ exports.list_all_heroes = function(req, res) {
   if (req.query && req.query.name) {
     searchQuery = {name: new RegExp(req.query.name,"i")}
   }
-  Hero.find({}, function(err, heroes) {
+  Hero.find(searchQuery, function(err, heroes) {
     if (err)
       res.send(err);
-    // res.json(heroes);
-    res.json([{id:0, name: "Test1"}, {id: 1, name: "test2"}, {id: 2, name: "Jenkins Success?"}]);
+    res.json(heroes);
+//    res.json([{id:0, name: "Test1"}, {id: 1, name: "test2"}, {id: 2, name: "Jenkins Success?"}]);
   });
 };
 
@@ -44,6 +43,7 @@ exports.read_a_hero = function(req, res) {
   Hero.find({id: req.params.heroId}, function(err, hero) {
     if (err)
       res.send(err);
+    hero = hero.length == 1 ? hero[0] : null;
     res.json(hero);
   });
 };

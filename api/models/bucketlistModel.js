@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 /**
  * @swagger
  *  components:
@@ -34,4 +33,7 @@ var HeroSchema = new Schema({
   }  
 });
 
-module.exports = mongoose.model('Heroes', HeroSchema);
+// module.exports = mongoose.model('Heroes', HeroSchema);
+
+var conn = mongoose.createConnection('mongodb+srv://test:test4now@cluster0.4d1s3.mongodb.net/heroes?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
+module.exports = conn.model('Heroes', HeroSchema);
