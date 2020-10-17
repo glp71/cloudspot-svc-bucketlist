@@ -5,6 +5,7 @@ var express = require('express'),
   Heroes = require('./api/models/bucketlistModel'), //created model loading here
   bodyParser = require('body-parser');
   params = require('./parameters');
+  cors = require('cors');
   
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
@@ -19,6 +20,7 @@ const options = {
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://test:test4now@cluster0.4d1s3.mongodb.net/heroes?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

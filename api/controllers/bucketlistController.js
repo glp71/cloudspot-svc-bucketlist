@@ -16,7 +16,6 @@ Hero.find({}, function(err, heroes) {
 });
 
 exports.list_all_heroes = function(req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
   var searchQuery = {};
   if (req.query && req.query.name) {
     searchQuery = {name: new RegExp(req.query.name,"i")}
